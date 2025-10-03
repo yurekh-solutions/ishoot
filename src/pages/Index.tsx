@@ -15,6 +15,10 @@ import ServicesSection from "@/components/home/ServicesSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import FeaturesGrid from "@/components/discover/FeaturesGrid";
 import AppFeatures from "@/components/discover/AppFeatures";
+import DiscoverSection from "@/components/home/DiscoverSection";
+import StatsSection from "@/components/home/StatsSection";
+import ServicesSections from "@/components/home/ServicesSections";
+import FeaturesCarousel from "@/components/home/FeaturesCarousel";
 
 const Index = () => {
   return (
@@ -22,20 +26,23 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        {/* <Carsoule /> */}
+        <StatsSection />
         <WhoAreCreators />
+        <ServicesSections />
+        <FeaturesCarousel />
         {/* <PricingPackages/> */}
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <FeaturesSection />
         <WhyJoin />
         <WhoCanApply />
-
+<DiscoverSection />
         <AppFeatures />
         <HowItWorks />
+                <PricingPackages />
+
         <WhoYouWorkWith />
         <Testimonials />
-        
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -47,7 +54,7 @@ const Index = () => {
             </div>
             <PartnerForm />
           </div>
-        </section>
+        </section> */}
 
         <FAQ />
       </main>

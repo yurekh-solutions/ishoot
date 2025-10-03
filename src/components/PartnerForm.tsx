@@ -183,7 +183,7 @@ const PartnerForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-all duration-300 text-lg py-6"
+          className="w-full bg-gradient-to-r  sm:overflow-hidden from-primary to-primary-glow hover:shadow-glow transition-all duration-300 text-md py-6"
         >
           {isSubmitting ? (
             "Submitting..."

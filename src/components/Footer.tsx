@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Social Links & Copyright */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} iShoot - A product of Konchamkode Private Limited. All rights reserved. <span className="text-primary"> Developed By <a href="https://yurekh.com/"> Yurekh Solutions</a></span>
+            © {currentYear} iShoot  All rights reserved. <span className="text-primary"> Developed By <a href="https://yurekh.com/"> Yurekh Solutions</a></span>
           </p>
           {/* <div className="flex gap-4">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

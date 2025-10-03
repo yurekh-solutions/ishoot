@@ -1,89 +1,105 @@
 import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Carsoule = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-4">
+    <section className="min-h-screen flex items-center justify-center pt-20 px-4 mb-4">
       <div className="container mx-auto">
         <div className="text-center space-y-8 animate-slide-in">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card text-sm text-muted-foreground">
-            <span className="text-primary font-semibold mr-2">✨</span>
-            WORLD'S FIRST QUICK CONTENT SERVICE
+          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-sm font-medium mt-20">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span>World's First Quick Content Service</span>
           </div>
 
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white">
               We Shoot • Edit • Deliver Reels in
             </h1>
-            <div className="text-6xl md:text-8xl lg:text-9xl font-black gradient-text animate-glow-pulse">
-              10 Minutes*
+            <div className="text-4xl md:text-8xl lg:text-9xl font-extrabold text-primary tracking-tight">
+              10 Minutes<span className="align-super text-2xl">*</span>
             </div>
           </div>
 
-          {/* Mobile App Mockup */}
+          {/* Animated Phone Mockup */}
           <div className="flex justify-center mt-12">
-            <div className="phone-mockup animate-float">
-              <div className="phone-screen h-[400px] md:h-[500px] w-[200px] md:w-[250px] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-black">
-                  {/* Status Bar */}
-                  <div className="flex justify-between items-center p-3 text-white text-xs">
-                    <span>9:41</span>
-                    <div className="flex space-x-1">
-                      <div className="w-4 h-2 bg-white rounded-sm"></div>
-                      <div className="w-4 h-2 bg-white rounded-sm"></div>
-                      <div className="w-4 h-2 bg-white rounded-sm"></div>
-                    </div>
-                  </div>
-                  
-                  {/* App Content */}
-                  <div className="p-4 text-white">
-                    <div className="text-sm text-gray-400 mb-2">Hey, Shrey</div>
-                    <div className="text-lg font-bold mb-4">You are just in<br />the right place!</div>
-                    
-                    {/* Action Buttons */}
-                    <div className="grid grid-cols-4 gap-3 mb-6">
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-1">
-                          <span className="text-lg">+</span>
-                        </div>
-                        <span className="text-xs">Book Now</span>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-1">
-                          <span className="text-lg">📦</span>
-                        </div>
-                        <span className="text-xs">Packages</span>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-1">
-                          <span className="text-lg">💰</span>
-                        </div>
-                        <span className="text-xs">My Wallet</span>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-1">
-                          <span className="text-lg">⚙️</span>
-                        </div>
-                        <span className="text-xs">Settings</span>
-                      </div>
-                    </div>
-                    
-                    {/* Featured Card */}
-                    <div className="bg-primary rounded-lg p-4 mb-4">
-                      <div className="text-white font-bold text-sm mb-1">REELS CREATED</div>
-                      <div className="text-white font-bold text-sm">AND DELIVERED</div>
-                      <div className="text-white font-bold text-sm">ON THE SPOT</div>
-                    </div>
-                  </div>
+            <motion.div
+              initial={{ y: 20, rotate: -2 }}
+              animate={{ y: [0, -8, 0], rotate: [-2, 2, -2] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-[220px] h-[460px] md:w-[260px] md:h-[520px] rounded-[3rem] 
+              bg-primary border-[12px] border-secondary-800 shadow-2xl overflow-hidden"
+            >
+              {/* Screen glow animation */}
+              <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-800 to-black animate-pulse" />
+
+              {/* Status Bar */}
+              <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-4 py-2 text-white text-xs z-10">
+                <span>9:41</span>
+                <div className="flex space-x-1">
+                  <div className="w-3 h-2 bg-white rounded-sm"></div>
+                  <div className="w-3 h-2 bg-white rounded-sm"></div>
+                  <div className="w-3 h-2 bg-white rounded-sm"></div>
                 </div>
               </div>
-            </div>
+
+              {/* App UI */}
+              <div className="relative p-4 text-white z-10">
+                <div className="text-sm text-gray-400 mb-2">Hey, Yurekh</div>
+                <div className="text-lg font-bold mb-4 leading-snug">
+                  You are just in <br /> the right place!
+                </div>
+
+                {/* Grid actions with animated hover */}
+                <div className="grid grid-cols-4 gap-3 mb-6">
+                  {[
+                    { icon: "+", label: "Book Now" },
+                    { icon: "📦", label: "Packages" },
+                    { icon: "💰", label: "Wallet" },
+                    { icon: "⚙️", label: "Settings" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.15, y: -4 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="flex flex-col items-center cursor-pointer"
+                    >
+                      <div
+                        className="w-12 h-12 rounded-xl glass-card bg-gradient-to-br from-primary/20 to-accent/10 
+                        flex items-center justify-center shadow-md"
+                      >
+                        <span className="text-lg text-primary">{item.icon}</span>
+                      </div>
+                      <span className="text-xs mt-1 text-gray-300 group-hover:text-primary">
+                        {item.label}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Highlight Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                  className="bg-gradient-to-b from-[#0872af] to-zinc-900 rounded-lg p-4 text-center shadow-inner"
+                >
+                  <p className="text-xs font-bold">REELS CREATED</p>
+                  <p className="text-xs font-bold">AND DELIVERED</p>
+                  <p className="text-xs font-bold">ON THE SPOT</p>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
 
           {/* CTA Button */}
           <div className="pt-8">
-            <Button size="lg" className="red-glow px-8 py-6 text-lg rounded-full">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-zinc-700 px-8 py-6 text-lg rounded-full shadow-lg"
+            >
               Start Your Reel Journey
             </Button>
           </div>
@@ -93,4 +109,4 @@ const Carsoule = () => {
   );
 };
 
-export default  Carsoule;
+export default Carsoule;

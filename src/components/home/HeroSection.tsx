@@ -19,11 +19,11 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            Turn Your iPhone Into
-            <br />
+            Turn Scroll-Stopping Reels <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-glow to-accent animate-shine bg-[length:200%_auto]">
-              an Income Machine
-            </span>
+           
+           Into Real Income </span>
+
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -65,20 +65,7 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-10 max-w-4xl   glass-card rounded-2xl mx-auto p-4 ">
-            <div className="text-center ">
-              <div className="text-2xl font-bold text-primary ">50,00+</div>
-              <div className="text-sm text-muted-foreground mt-1">Reels Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground mt-1">Active Creators</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">4.9/5</div>
-              <div className="text-sm text-muted-foreground mt-1">Rating</div>
-            </div>
-          </div>
+          
         </div>
       </div>
 

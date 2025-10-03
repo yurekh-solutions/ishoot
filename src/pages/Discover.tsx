@@ -5,6 +5,8 @@ import PricingPackages from "@/components/discover/PricingPackages";
 import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import FeaturesGrid from "@/components/discover/FeaturesGrid";
+import Carsoule from "@/components/home/carsoule";
+import DiscoverSection from "@/components/home/DiscoverSection";
 
 const Discover = () => {
   return (
@@ -27,10 +29,9 @@ const Discover = () => {
             </div>
           </div>
         </section>
-
+<DiscoverSection />
         <FeaturesGrid />
         {/* <AppFeatures /> */}
-        <PricingPackages />
         <Testimonials />
         <FAQ />
       </main>

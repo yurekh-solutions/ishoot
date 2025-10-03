@@ -1,4 +1,4 @@
-import { Camera, ShoppingBag, Coffee, GraduationCap, Globe } from "lucide-react";
+import { Camera, ShoppingBag, Coffee, GraduationCap, Globe, Music } from "lucide-react";
 
 const clients = [
   {
@@ -25,6 +25,11 @@ const clients = [
     icon: Globe,
     title: "Global Brand Campaigns",
     description: "Work with international brands and expand your reach"
+  },
+    {
+    icon: Music,
+    title: "Artists & Entertainment",
+    description: "Create reels for musicians, performers, and shows"
   }
 ];
 
