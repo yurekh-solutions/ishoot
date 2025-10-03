@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 195 100% 65%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 25%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 195 85% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 18%;
+    --ring: 195 100% 50%;
+
+    --radius: 1rem;
+
+    /* Glass effect variables */
+    --glass-bg: 220 20% 15% / 0.1;
+    --glass-border: 195 100% 50% / 0.2;
+    --glass-hover: 220 20% 20% / 0.15;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195, 100%, 50%), hsl(195, 100%, 65%));
+    --gradient-bg: linear-gradient(135deg, hsl(220, 25%, 8%), hsl(220, 20%, 12%));
+    
+    /* Shadows */
+    --shadow-glass: 0 8px 32px 0 hsl(195 100% 50% / 0.15);
+    --shadow-glow: 0 0 40px hsl(195 100% 65% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(195 100% 50% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: linear-gradient(135deg, hsl(220, 25%, 8%), hsl(220, 20%, 12%));
+    min-height: 100vh;
+  }
+
+  /* Glass effect utility classes */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+
+  /* Pixelated effect for decorative elements */
+  .pixel-effect {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
