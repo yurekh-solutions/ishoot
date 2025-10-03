@@ -69,22 +69,32 @@ const FeaturesCarousel = () => {
     setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
   };
 
+  // Dynamically adjust number of visible cards based on screen size
+  const getVisibleCount = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 640) return 1; // Mobile: 1 card
+      if (window.innerWidth < 1024) return 2; // Tablet: 2 cards
+    }
+    return 4; // Desktop: 4 cards
+  };
+
   const getVisibleFeatures = () => {
     const visible = [];
-    for (let i = 0; i < 4; i++) {
+    const count = getVisibleCount();
+    for (let i = 0; i < count; i++) {
       visible.push(features[(currentIndex + i) % features.length]);
     }
     return visible;
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Powerful Features for <span className="text-primary">Creators</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Everything you need to create, manage, and deliver amazing content
           </p>
         </div>
@@ -94,38 +104,38 @@ const FeaturesCarousel = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 glass-card h-12 w-12 rounded-full"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 glass-card h-10 w-10 md:h-12 md:w-12 rounded-full"
             onClick={prevSlide}
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
           </Button>
 
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 glass-card h-12 w-12 rounded-full"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 glass-card h-10 w-10 md:h-12 md:w-12 rounded-full"
             onClick={nextSlide}
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
           </Button>
 
           {/* Carousel Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-16">
             {getVisibleFeatures().map((feature, index) => (
               <div
                 key={`${feature.title}-${index}`}
                 className="glass-card rounded-2xl p-6 flex flex-col items-center text-center h-full"
               >
-                <h3 className="text-xl font-bold mb-3 min-h-[56px] flex items-center">
+                <h3 className="text-lg md:text-xl font-bold mb-3 min-h-[48px] flex items-center">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 text-sm flex-grow">
+                <p className="text-muted-foreground mb-6 text-sm md:text-base flex-grow">
                   {feature.description}
                 </p>
 
                 {/* Phone Mockup with Image */}
-                <div className="relative w-full max-w-[200px] aspect-[9/19] bg-background rounded-3xl border-4 border-foreground/20 overflow-hidden shadow-2xl">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-background rounded-b-2xl z-10"></div>
+                <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-[9/19] bg-background rounded-2xl md:rounded-3xl border-4 border-foreground/20 overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-20 h-5 md:h-6 bg-background rounded-b-2xl z-10"></div>
                   <img
                     src={feature.imageUrl}
                     alt={feature.title}
@@ -138,13 +148,13 @@ const FeaturesCarousel = () => {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {features.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex ? "bg-primary w-8" : "bg-muted-foreground/30"
+                index === currentIndex ? "bg-primary w-6 md:w-8" : "bg-muted-foreground/30"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

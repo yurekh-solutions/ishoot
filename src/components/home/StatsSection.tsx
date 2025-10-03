@@ -58,7 +58,7 @@ const StatsSection = () => {
               key={stat.label}
               className="text-center glass-card rounded-2xl p-8 hover:scale-105 transition-transform"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="text-2xl md:text-5xl font-bold text-primary mb-2">
                 {counters[index].toLocaleString()}
                 {stat.suffix}
               </div>
