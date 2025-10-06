@@ -27,16 +27,20 @@ const Index = () => {
       <main>
         <HeroSection />
         <StatsSection />
-        <WhoAreCreators />
-        <ServicesSections />
         <FeaturesCarousel />
+        <DiscoverSection />
+
+                <FeaturesSection />
+        <AppFeatures />
+                        <ServicesSections />
+
+        <WhoAreCreators />
         {/* <PricingPackages/> */}
         {/* <ServicesSection /> */}
-        <FeaturesSection />
         <WhyJoin />
+
         <WhoCanApply />
-<DiscoverSection />
-        <AppFeatures />
+
         <HowItWorks />
                 <PricingPackages />
 
